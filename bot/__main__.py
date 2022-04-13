@@ -76,7 +76,7 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
         sendMarkup(start_string, context.bot, update.message, reply_markup)
     else:
-        sendMarkup('NO!', context.bot, update.message, reply_markup)
+        sendMarkup('𝕾𝖙𝖗𝖆𝖎𝖌𝖍𝖙 𝕯𝖔𝖜𝖓 𝕿𝖔 𝕳𝖊𝖑𝖑 ', context.bot, update.message, reply_markup)
 
 def restart(update, context):
     restart_message = sendMessage("Restarting...", context.bot, update.message)
