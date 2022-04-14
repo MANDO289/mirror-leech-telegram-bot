@@ -79,4 +79,4 @@ class TelegraphHelper:
         return
 
 
-telegraph=TelegraphHelper('Mirror-Leech-Telegram-Bot', 'https://github.com/anasty17/mirror-leech-telegram-bot')
+telegraph=TelegraphHelper('NELARO', 'https://t.me/XxXXxxX_xXxXx_XxXXxxX')
