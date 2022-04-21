@@ -1,5 +1,4 @@
-import signal
-
+from signal import signal, SIGINT
 from os import path as ospath, remove as osremove, execl as osexecl
 from subprocess import run as srun, check_output
 from psutil import disk_usage, cpu_percent, swap_memory, cpu_count, virtual_memory, net_io_counters, boot_time
@@ -39,7 +38,6 @@ def stats(update, context):
     swap = swap_memory()
     swap_p = swap.percent
     swap_t = get_readable_file_size(swap.total)
-    swap_u = get_readable_file_size(swap.used)
     memory = virtual_memory()
     mem_p = memory.percent
     mem_t = get_readable_file_size(memory.total)
@@ -274,7 +272,7 @@ def main():
     dispatcher.add_handler(log_handler)
     updater.start_polling(drop_pending_updates=IGNORE_PENDING_REQUESTS)
     LOGGER.info("Bot Started!")
-    signal.signal(signal.SIGINT, exit_clean_up)
+    signal(SIGINT, exit_clean_up)
     if rss_session is not None:
         rss_session.start()
 
